@@ -3,7 +3,7 @@ import * as React from 'react';
 import { CoolProvider, ICoolContext, ICoolState } from './cool-context';
 
 export class CoolParent extends React.Component<{}, ICoolContext> {
-  state = {
+  state: ICoolContext = {
     isCool: false,
     someStuff: 'watwat',
     setContextState: (state: ICoolState) =>

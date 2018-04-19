@@ -7,11 +7,18 @@ export const {
   Provider: CoolProvider
 } = React.createContext<ICoolContext>({
   isCool: false,
-  // tslint:disable-next-line:no-console
-  setIsCool: (b: boolean) => console.log('not implemented')
+  someStuff: 'stuuuf',
+  // tslint:disable-next-line:object-literal-sort-keys
+  setState: (s: SetStateProps) => alert('weeeee')
 });
 
-export interface ICoolContext {
-  isCool: boolean;
-  setIsCool: (b: boolean) => void;
+export interface ICoolContext extends ICoolState {
+  setState: (s: SetStateProps) => void;
 }
+
+export interface ICoolState {
+  isCool: boolean;
+  someStuff: string;
+}
+
+export type SetStateProps = Partial<ICoolState>;

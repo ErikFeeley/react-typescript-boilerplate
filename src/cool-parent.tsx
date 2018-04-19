@@ -1,11 +1,13 @@
 import * as React from 'react';
 
-import { CoolProvider, ICoolContext } from './cool-context';
+import { CoolProvider, ICoolContext, SetStateProps } from './cool-context';
 
 export class CoolParent extends React.Component<{}, ICoolContext> {
-  state = {
+  state: ICoolContext = {
     isCool: false,
-    setIsCool: (b: boolean) => this.setState({ isCool: b })
+    someStuff: 'watwat',
+    // tslint:disable-next-line:object-literal-sort-keys
+    setState: (s: SetStateProps) => this.setState({ ...s })
   };
 
   render() {

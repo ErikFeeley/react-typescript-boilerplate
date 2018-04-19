@@ -5,8 +5,7 @@ import { CoolProvider, ICoolContext } from './cool-context';
 export class CoolParent extends React.Component<{}, ICoolContext> {
   state = {
     isCool: false,
-    makeItCool: () => this.setState({ isCool: true }),
-    makeItUnCool: () => this.setState({ isCool: false })
+    setIsCool: (b: boolean) => this.setState({ isCool: b })
   };
 
   render() {

@@ -7,12 +7,11 @@ export const {
   Provider: CoolProvider
 } = React.createContext<ICoolContext>({
   isCool: false,
-  makeItCool: () => alert('not implemented!!!'),
-  makeItUnCool: () => alert('not implemented!!!')
+  // tslint:disable-next-line:no-console
+  setIsCool: (b: boolean) => console.log('not implemented')
 });
 
 export interface ICoolContext {
   isCool: boolean;
-  makeItCool: () => void;
-  makeItUnCool: () => void;
+  setIsCool: (b: boolean) => void;
 }

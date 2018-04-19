@@ -8,12 +8,12 @@ export const {
 } = React.createContext<ICoolContext>({
   isCool: false,
   someStuff: 'stuuuf',
-  // tslint:disable-next-line:object-literal-sort-keys
-  setState: (s: SetStateProps) => alert('weeeee')
+  setContextState: (state, callback) =>
+    alert('how did this happen')
 });
 
 export interface ICoolContext extends ICoolState {
-  setState: (s: SetStateProps) => void;
+  setContextState: SetContextStateFunc<ICoolState>;
 }
 
 export interface ICoolState {
@@ -21,4 +21,7 @@ export interface ICoolState {
   someStuff: string;
 }
 
-export type SetStateProps = Partial<ICoolState>;
+export type SetContextStateFunc<T> = <K extends keyof T>(
+  contextState: (Pick<T, K> | T),
+  callback?: () => void
+) => void;

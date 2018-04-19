@@ -12,7 +12,8 @@
         "no-console": true,
         "semicolon": true,
         "no-unused-variable": true,
-        "align": false
+        "align": false,
+        "object-literal-sort-keys": false
     },
     "rulesDirectory": []
 }
